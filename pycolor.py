@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
 import yaml
-"""
-with open('example.yaml') as archfile:
-    doc = yaml.load_all(archfile,Loader=yaml.FullLoader)
-    yaml.
 
-    for data in doc:
+themes = "themes/nord.yaml"
+FileAlacritty = "example.yaml"
 
-        for u, d in data.items():
 
-            if u == "colors":
-                print("Encontrado {}".format(3))
-"""
-alacritty = "themes/dracula.yaml"
-yaml_file = open(alacritty,'r')
-yaml_content = yaml.load(yaml_file,Loader=yaml.FullLoader)
+if __name__ == '__main__':
+    updateChange = open(FileAlacritty,'r')
+    addLines = open(themes,'r')
 
-print("Key: Value")
-for key, value in yaml_content.items():
-    print(f"{key}:{value}")
+    readAlacritty = yaml.load(updateChange,Loader=yaml.FullLoader)
+    readThemes = yaml.load(addLines,Loader=yaml.FullLoader)
+    
+    readAlacritty['colors'] = readThemes['colors']
+    updateChange.close()
+    addLines.close()
+
+    updateFile = open(FileAlacritty,'w')
+    resulChanges = yaml.dump(readAlacritty,updateFile,default_flow_style=False,sort_keys=False)
+    updateFile.close()
+
