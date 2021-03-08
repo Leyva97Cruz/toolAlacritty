@@ -2,8 +2,8 @@ env:
   TERM: xterm-256color
 window:
   padding:
-    x: 6
-    y: 6
+    x: 9
+    y: 9
   title: Alacritty
   class:
     instance: Alacritty
@@ -12,21 +12,20 @@ scrolling:
   history: 5000
 font:
   normal:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Regular
   bold:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Italic
   bold_italic:
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     style: Bold Italic
   size: 10.0
-  offset:
-    x: 1
-    y: 1
+  use_thin_strokes: true
+  draw_bold_text_with_bright_colors: true
   selection:
     text: '0x282a36'
     background: '0xbbc5ff'
@@ -53,5 +52,7 @@ colors:
     cyan: '#8FBCBB'
     white: '#ECEFF4'
 background_opacity: 0.98
+selection:
+  semantic_escape_chars: ",\u2502`|:\"' ()[]{}<>\t"
 cursor:
   style: Beam
