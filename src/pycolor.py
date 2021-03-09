@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 import yaml
+import sys
 
 themes = "themes/nord.yaml"
-FileAlacritty = "example.yaml"
+FileAlacritty = "example.yml"
 
 
 if __name__ == '__main__':
@@ -17,6 +18,7 @@ if __name__ == '__main__':
     addLines.close()
 
     updateFile = open(FileAlacritty,'w')
-    resulChanges = yaml.dump(readAlacritty,updateFile,default_flow_style=False,sort_keys=False)
+    #resulChanges = yaml.dump(readAlacritty,updateFile,default_flow_style=False,sort_keys=False,sys.stdout)
+    resulChanges = yaml.dump(readAlacritty,updateFile,default_flow_style=False,sort_keys=False,sys.stdout)
     updateFile.close()
 
