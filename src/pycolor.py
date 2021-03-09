@@ -18,7 +18,6 @@ if __name__ == '__main__':
     addLines.close()
 
     updateFile = open(FileAlacritty,'w')
-    #resulChanges = yaml.dump(readAlacritty,updateFile,default_flow_style=False,sort_keys=False,sys.stdout)
-    resulChanges = yaml.dump(readAlacritty,updateFile,default_flow_style=False,sort_keys=False,sys.stdout)
+    resulChanges = yaml.dump_all(readAlacritty,updateFile,default_flow_style=False,sort_keys=False)
     updateFile.close()
 
