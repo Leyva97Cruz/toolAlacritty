@@ -13,12 +13,12 @@ if __name__ == '__main__':
     readAlacritty = yaml.load(updateChange,Loader=yaml.FullLoader)
     readThemes = yaml.load(addLines,Loader=yaml.FullLoader)
     
-    readAlacritty['colors'] = readThemes['colors']
+    acritty['colors'] = readThemes['colors']
+
     updateChange.close()
     addLines.close()
 
     updateFile = open(FileAlacritty,'w')
-    #resulChanges = yaml.dump(readAlacritty,updateFile,default_flow_style=False,sort_keys=False,sys.stdout)
-    resulChanges = yaml.dump(readAlacritty,updateFile,default_flow_style=False,sort_keys=False,sys.stdout)
+    resulChanges = yaml.dump(readAlacritty,updateFile,default_flow_style=False,sort_keys=False)
     updateFile.close()
 
